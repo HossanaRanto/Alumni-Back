@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Alumni-Back.props" />
+</Project>

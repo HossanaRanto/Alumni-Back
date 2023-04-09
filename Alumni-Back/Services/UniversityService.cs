@@ -3,7 +3,6 @@ using Alumni_Back.Models;
 using Alumni_Back.Repository;
 using Alumni_Back.Serializers;
 using Alumni_Back.Validators;
-using AlumniBack.Migrations;
 using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 using OneOf;

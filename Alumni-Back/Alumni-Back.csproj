@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\**" />
+    <Content Remove="Migrations\**" />
+    <EmbeddedResource Remove="Migrations\**" />
+    <None Remove="Migrations\**" />
+  </ItemGroup>
+
+  <ItemGroup>
 	  <PackageReference Include="Faker.Net" Version="2.0.154" />
 	  <PackageReference Include="FluentValidation" Version="11.5.1" />
 	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.10" />
@@ -23,11 +30,6 @@
 	  <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
 	  <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="7.0.6" />
 	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.26.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-    <Folder Include="wwwroot\Medias\" />
   </ItemGroup>
 
 </Project>

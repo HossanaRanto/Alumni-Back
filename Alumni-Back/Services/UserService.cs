@@ -41,11 +41,22 @@ namespace Alumni_Back.Services
         public OneOf<User,ValidationFailed> Create(UserDto user)
         {
             var validator = new UserValidator();
-            var validate= validator.Validate(user);
+            var validate = validator.Validate(user);
             if (!validate.IsValid)
             {
                 return new ValidationFailed(validate.Errors);
             }
+            var address = new Address
+            {
+                Country = user.Address.country,
+                City = user.Address.city,
+                PostalCode = user.Address.postalcode,
+                Coordinates = user.Address.coordinates
+            };
+
+            this.context.Addresses.Add(address);
+            this.context.SaveChanges();
+
             var u = new User
             {
                 Username = user.Username,
@@ -55,13 +66,7 @@ namespace Alumni_Back.Services
                 Gender = user.Gender,
                 Birthdate = user.Birthdate,
                 Contact = user.Contact,
-                Address = new Address
-                {
-                    Country = user.Address.country,
-                    City = user.Address.city,
-                    PostalCode = user.Address.postalcode,
-                    Coordinates = user.Address.coordinates
-                },
+                Address = address,
                 Email = user.Email,
             };
             context.Users.Add(u);

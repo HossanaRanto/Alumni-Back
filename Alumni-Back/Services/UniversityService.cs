@@ -104,7 +104,25 @@ namespace Alumni_Back.Services
             return univ;
 
         }
+        public async Task<OneOf<string,University>> ChangeImage(FileUpload file)
+        {
+            var university = this.context.Universities
+                .Include(u=>u.Adminstrator)
+                .FirstOrDefault(u => u.Adminstrator == this.user.ConnectedUser);
 
+            if (university == null)
+            {
+                return "Not found";
+            }
+
+            university.ImageCover = Guid.NewGuid() + Path.GetExtension(file.File.FileName);
+
+            await this.media.Upload(file, university.ImageCover);
+
+            this.context.SaveChanges();
+
+            return university;
+        }
         public async Task<List<Request>> GetListRequest()
         {
             var admin=user.ConnectedUser;

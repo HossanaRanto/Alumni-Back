@@ -139,3 +139,4 @@ C:\Users\Mahefaniaina Ranto H\Documents\Etude\Alumni\Alumni-Back\Alumni-Back\obj
 C:\Users\Mahefaniaina Ranto H\Documents\Etude\Alumni\Alumni-Back\Alumni-Back\obj\Debug\net6.0\Alumni-Back.pdb
 C:\Users\Mahefaniaina Ranto H\Documents\Etude\Alumni\Alumni-Back\Alumni-Back\obj\Debug\net6.0\Alumni-Back.genruntimeconfig.cache
 C:\Users\Mahefaniaina Ranto H\Documents\Etude\Alumni\Alumni-Back\Alumni-Back\obj\Debug\net6.0\ref\Alumni-Back.dll
+C:\Users\Mahefaniaina Ranto H\Documents\Etude\Alumni\Alumni-Back\Alumni-Back\bin\Debug\net6.0\appsettings.json

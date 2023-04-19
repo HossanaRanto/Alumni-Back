@@ -26,6 +26,16 @@ namespace Alumni_Back.Controllers
                 errors => BadRequest(errors.Errorsmessages));
         }
 
+        [HttpPost("updateimage")]
+        [Authorization]
+        public async Task<IActionResult> UpdatePicture([FromForm] FileUpload file)
+        {
+            var result = await this.university.ChangeImage(file);
+
+            return result.Match<IActionResult>(
+                _ => BadRequest(new { Error = _ }),
+                u => Ok(u));
+        }
         [HttpPost("join/{university_id}")]
         [Authorization]
         public async Task<IActionResult> Join([FromRoute] int university_id)

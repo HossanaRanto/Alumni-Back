@@ -10,6 +10,7 @@ namespace Alumni_Back.Repository
     public interface IUniversityRepository
     {
         OneOf<University,ValidationFailed> Create(UniversityDto university);
+        Task<OneOf<string, University>> ChangeImage(FileUpload file);
         Task<University> Get(int university_id);
         Task<UniversitySerializer> GetSerializer(int universit_id);
         Task<UniversitySerializer> GetSerializer(University university);
